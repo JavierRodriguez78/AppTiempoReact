@@ -8,10 +8,15 @@ class DatosTemperatura extends Component{
 
     render(){
         const {temperatura} = this.props;
-        console.log("Temperatura -> "+ JSON.stringify(temperatura));
+        const {viento} = this.props;
+        const {humedad} = this.props;
         return (
             <div>
-                <h1>Datos Temperatura</h1>
+                <h1>{`${temperatura} Cº`}</h1>
+                <div>
+                    <span>Humedad {humedad} % | </span>
+                    <span>Vel Viento {viento} km/h </span>
+                </div>
             </div>
         )
     }

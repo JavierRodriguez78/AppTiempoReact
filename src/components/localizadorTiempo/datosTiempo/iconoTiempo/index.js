@@ -2,11 +2,11 @@ import React , { Component } from 'react';
 import WeatherIcons from 'react-weathericons';
 
 const EstadoTiempo = estadoTiempo=>{
-    switch(estadoTiempo){
-        case "nublado":
+     switch(estadoTiempo[0].main){
+        case "Clouds":
         return "cloud";
         case "soleado":
-        return "sun";
+        return "day-sunny";
         case "lluvioso":
         return "rain"
         default:
@@ -18,7 +18,7 @@ const EstadoTiempo = estadoTiempo=>{
 
 class IconoTiempo extends Component {
     constructor( props){
-        super(props.icono);
+        super(props);
        
     }
 
@@ -31,7 +31,7 @@ class IconoTiempo extends Component {
         let estado = "nublado";
         return(
             <div><h1>Icono</h1> 
-             <WeatherIcons name ={EstadoTiempo(estado)} size="2x"></WeatherIcons>
+             <WeatherIcons name ={icono.weather ? EstadoTiempo(icono.weather):estado } size="2x"></WeatherIcons>
              </div>
         )
     }

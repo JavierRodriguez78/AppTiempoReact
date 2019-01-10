@@ -25,7 +25,8 @@ class LocalizadorTiempo extends Component
                 <h2>Es el componente Localizador Tiempo</h2>
                 <Localizador ciudad={location}/>
                 <DatosTiempo datos= {datos} />
-            </div>
+   
+                         </div>
         )
     }
 }
